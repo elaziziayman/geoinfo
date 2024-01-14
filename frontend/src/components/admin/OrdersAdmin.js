@@ -13,10 +13,10 @@ import TitleChart from '../dashboard/TitleChart';
 import { styled, alpha } from '@mui/material/styles';
 import { CircularProgress } from '@mui/material';
 import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';  // Add this import
-import DialogTitle from '@mui/material/DialogTitle';  // Add this import
-import DialogContent from '@mui/material/DialogContent';  // Add this import
-import TextField from '@mui/material/TextField';  // Add this import
+import Dialog from '@mui/material/Dialog'; 
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent'; 
+import TextField from '@mui/material/TextField';  
 import DialogActions from '@mui/material/DialogActions';
 import {Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -31,8 +31,8 @@ import axios from 'axios';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  padding: '16px', // Adjust padding for cells
-  minWidth: '100px', // Set minimum width for cells
+  padding: '16px',
+  minWidth: '100px',
 
 
   [`&.${tableCellClasses.head}`]: {
@@ -48,9 +48,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: alpha(theme.palette.primary.light, 0.1), // Adjust the alpha value as needed
+    backgroundColor: alpha(theme.palette.primary.light, 0.1),
   },
-  // hide last border
   '&:last-child td, &:last-child th': {
     border: 0,
   },
@@ -109,12 +108,12 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
 
   const buttonStyle = {
     width: '50px',
-    height: '50px', // Set height equal to width to make the button circular
+    height: '50px', 
     margin: '0 8px',
     fontSize: '10px',
     fontWeight: 'bold',
     fontFamily: 'YourFont, sans-serif',
-    borderRadius: '50%', // Make the button circular
+    borderRadius: '50%', 
   };
 
 
@@ -171,7 +170,7 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
       })
       .then(response => {
         console.log('Update successful:', response.data);
-        setHiddenRows([...hiddenRows, id]); // Ajoutez l'ID de la ligne aux lignes cachées
+        setHiddenRows([...hiddenRows, id]); 
 
       })
       .catch(error => {
@@ -190,7 +189,7 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
       })
       .then(response => {
         console.log('Update successful:', response.data);
-        setHiddenRows([...hiddenRows, id]); // Ajoutez l'ID de la ligne aux lignes cachées
+        setHiddenRows([...hiddenRows, id]);
 
       })
       .catch(error => {
@@ -200,7 +199,6 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
   };
 
   const handleReject = () => {
-       // Placeholder function for handling rejection
 
     console.log(`Rejection reason for row with ID ${selectedRowId}: ${rejectionReason}`);
     handleCloseReasonDialogRejetee();
@@ -216,7 +214,6 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
 
     })
     .catch(error => {
-      // Gérer les erreurs
       console.error('Update error:', error);
     });
 
@@ -224,7 +221,6 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
     }
 
     const handleDefavorable = () => {
-      // Placeholder function for handling defavorable
       console.log(`Defavorable reason for row with ID ${selectedRowId}: ${defavorableReason}`);
       handleCloseReasonDialogDefavorable();
 
@@ -239,7 +235,6 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
 
     })
     .catch(error => {
-      // Gérer les erreurs
       console.error('Update error:', error);
     });
 
@@ -264,13 +259,6 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
     );
   };
 
-  // if (rows.length === 0) {
-  //   return (
-  //     <div style={{ textAlign: 'center', padding: '20px', fontSize: '18px', fontWeight: 'bold', color: '#555' }}>
-  //       Pas de données à afficher actuellement
-  //     </div>
-  //   );
-  // }
 
 
   return (
@@ -285,7 +273,6 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
     id="demandeur-filter-label"
     style={{
       visibility: demandeurFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }}
   >
     Filtrer par demandeur
@@ -295,7 +282,7 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
     options={getUniqueValues(rows, 'demandeur')}
     value={demandeurFilter || ''}
     onChange={(event, newValue) => {
-      const selectedValue = newValue || '';  // Set to an empty string if null
+      const selectedValue = newValue || ''; 
       handleFilterChange({ target: { value: selectedValue } }, setDemandeurFilter);
     }}
     renderInput={(params) => <TextField {...params} InputProps={{ ...params.InputProps }} />}
@@ -309,14 +296,13 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
 
               <InputLabel id="occupation-filter-label" style={{
       visibility: occupationFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }} >Filtrer par occupation</InputLabel>
               <Autocomplete
   id="occupation-filter"
   options={getUniqueValues(rows, 'occupation')}
   value={occupationFilter || ''}
   onChange={(event, newValue) => {
-    const selectedValue = newValue || '';  // Set to an empty string if null
+    const selectedValue = newValue || ''; 
     handleFilterChange({ target: { value: selectedValue } }, setOccupationFilter);
   }}
   renderInput={(params) => <TextField {...params} InputProps={{ ...params.InputProps }} />}
@@ -338,7 +324,7 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
   options={getUniqueValues(rows, 'autorisation')}
   value={autorisationFilter || ''}
   onChange={(event, newValue) => {
-    const selectedValue = newValue || '';  // Set to an empty string if null
+    const selectedValue = newValue || '';  
     handleFilterChange({ target: { value: selectedValue } }, setAutorisationFilter);
   }}
   renderInput={(params) => <TextField {...params} InputProps={{ ...params.InputProps }} />}
@@ -350,14 +336,13 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
           <FormControl fullWidth style={{ marginBottom: '10px', width: '225px' }}>
               <InputLabel id="arrondissement-filter-label"  style={{
       visibility: arrondissementFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }}>Filtrer par arrondissement</InputLabel>
               <Autocomplete
   id="arrondissement-filter"
   options={getUniqueValues(rows, 'commune')}
   value={arrondissementFilter || ''}
   onChange={(event, newValue) => {
-    const selectedValue = newValue || '';  // Set to an empty string if null
+    const selectedValue = newValue || ''; 
     handleFilterChange({ target: { value: selectedValue } }, setArrondissementFilter);
   }}
   renderInput={(params) => <TextField {...params} InputProps={{ ...params.InputProps }} />}
@@ -370,14 +355,13 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
                <FormControl fullWidth style={{ marginBottom: '10px', width: '180px' }}>
                  <InputLabel id="statut-filter-label" style={{
       visibility: statutFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }}>Filtrer par statut</InputLabel>
     <Autocomplete
   id="statut-filter"
   options={getUniqueValues(rows, 'statut')}
   value={statutFilter || ''}
   onChange={(event, newValue) => {
-    const selectedValue = newValue || '';  // Set to an empty string if null
+    const selectedValue = newValue || ''; 
     handleFilterChange({ target: { value: selectedValue } }, setStatutFilter);
   }}
   renderInput={(params) => <TextField {...params} InputProps={{ ...params.InputProps }} />}
@@ -386,25 +370,7 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
                </FormControl>
              </TableCell>)}
 
-        {/* <TableCell>
-            <FormControl fullWidth style={{ marginBottom: '10px' }}>
-              <InputLabel id="date-filter-label">Filter Date</InputLabel>
-              <Select
-                labelId="date-filter-label"
-                id="date-filter"
-                value={dateFilter}
-                label="Filter Date"
-                onChange={(e) => handleFilterChange(e, setDateFilter)}
-              >
-                <MenuItem value="">All</MenuItem>
-                {Array.from(new Set(rows.map((row) => row.date))).map((date) => (
-                  <MenuItem key={date} value={date}>
-                    {date}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </TableCell> */}
+      
 
           </TableRow>
       </TableHead>
@@ -488,7 +454,7 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
   <StyledTableCell align="center" sx={{ fontSize: 15 }}>
     <Button
       variant="contained"
-      color="primary" // Green color for "Accepter"
+      color="primary" 
       sx={{ width: '120px', margin: '0 8px', fontSize: '10px', fontWeight: 'bold', fontFamily: 'YourFont, sans-serif' }}
       onClick={() => handleAction(row.id, 'Accepter')}
     >
@@ -496,7 +462,7 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
     </Button>
     <Button
       variant="contained"
-      color="secondary" // Red color for "Rejeter"
+      color="secondary"
       sx={{ width: '120px', margin: '0 8px', fontSize: '10px', fontWeight: 'bold', fontFamily: 'YourFont, sans-serif' }}
       onClick={() => handleAction(row.id, 'reject')}
     >
@@ -508,7 +474,7 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
   <StyledTableCell align="center" sx={{ fontSize: 15 }}>
     <Button
       variant="contained"
-      color="primary" // Green color for "Accepter"
+      color="primary"
       sx={{ width: '120px', margin: '0 8px', fontSize: '10px', fontWeight: 'bold', fontFamily: 'YourFont, sans-serif' }}
       onClick={() => handleAction(row.id, 'Favorable')}
     >
@@ -516,7 +482,7 @@ export default function OrdersAdmin({title, rows, paginationEnabled, showStatus,
     </Button>
     <Button
       variant="contained"
-      color="secondary" // Red color for "Rejeter"
+      color="secondary"
       sx={{ width: '120px', margin: '0 8px', fontSize: '10px', fontWeight: 'bold', fontFamily: 'YourFont, sans-serif' }}
       onClick={() => handleAction(row.id, 'Défavorable')}
     >

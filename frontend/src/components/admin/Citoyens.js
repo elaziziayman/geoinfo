@@ -41,7 +41,7 @@ import MapIcon from '@mui/icons-material/Map';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
 
-import { useLocation } from 'react-router-dom';  // Add this line
+import { useLocation } from 'react-router-dom';  
 import { useNavigate } from 'react-router-dom';
 
 
@@ -53,25 +53,7 @@ function createData(id, num, demandeur, cin, email, statut, motif) {
     return {id, num, demandeur, cin, email, statut, motif};
   }
   
-  // const rows = [
-  //   createData(
-  //     0,
-  //     'Houssam',
-  //     'Houssam.mtq@gmail.com',
-  //     'Arrondissement El Fida',
-  //     '0675590066',
-      
-  //   ),
-  //   createData(
-  //     1,
-  //     'Amine',
-  //     'Villa',
-  //     'Amine.reactNative@gmail.com',
-  //     '0657575757',
-      
-  //   ),
 
-  // ];
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -119,7 +101,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function Citoyens() {
@@ -130,10 +111,7 @@ export default function Citoyens() {
 
   const { state } = useLocation();
   const handleNavigation = (pathname) => {
-    // Your logic here, you can perform additional actions before navigating
-    // For example, you can fetch data, validate something, etc.
-
-    // Then navigate to the specified path
+  
     navigate(pathname, { state: { user: user } });
   };
 
@@ -166,14 +144,12 @@ export default function Citoyens() {
   };
   
   if (user  === null) {
-    // Render "Page Not Authorized" content
     return (
       <div style={{ textAlign: 'center', marginTop: '100px', color: 'red' }}>
   <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>Page Not Authorized</h1>
   <p style={{ fontSize: '1.5rem' }}>
     You don't have the necessary permissions to access this page.
   </p>
-  {/* You can include additional content or redirect to another page */}
 </div>
 
     );
@@ -186,7 +162,7 @@ export default function Citoyens() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px', 
             }}
           >
             <IconButton
@@ -211,7 +187,6 @@ export default function Citoyens() {
               Comptes citoyens
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-    {/* AccountCircleIcon and Typography wrapped in a div or Box */}
     <Box sx={{ display: 'flex', alignItems: 'center', marginRight: '8px' }}>
       <AccountCircleIcon sx={{ fontSize: 40 }} />
       <Typography
@@ -225,7 +200,6 @@ export default function Citoyens() {
       </Typography>
     </Box>
     
-    {/* IconButton for Logout */}
     <IconButton component={RouterLink} to="/" title="Se déconnecter" color="inherit">
       <LogoutIcon sx={{ fontSize: 30 }} />
     </IconButton>
@@ -308,7 +282,6 @@ export default function Citoyens() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
 
-              {/* Mes demandes */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <AttClients title="Comptes citoyens" rows={rows} paginationEnabled showAction={true} />

@@ -33,7 +33,7 @@ function MyBarChart_2() {
   angle={-90}
   textAnchor="end"
   tick={{
-    fontSize: 12, // Set your desired font size
+    fontSize: 12, 
     fontWeight: 'bold',
     fontStyle: 'italic',
   }}

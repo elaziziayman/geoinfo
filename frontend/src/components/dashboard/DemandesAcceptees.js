@@ -31,125 +31,7 @@ function createData(id, num, autorisation, occupation, commune, date,statut) {
     return {id, num, autorisation, occupation, commune, date,statut};
   }
   
-  const rows = [
-    createData(
-      0,
-      1,
-      'Construction',
-      'Villa',
-      'Arrondissement El Fida',
-      '16 Mar, 2019',
-      'En cours',
-    ),
-    createData(
-      1,
-      2,
-      'Construction',
-      'Villa',
-      'Arrondissement El Fida',
-      '16 Mar, 2019',
-      'En cours',
-    ),
-    createData(
-      2,
-      3,
-      'Construction',
-      'Villa',
-      'Arrondissement El Fida',
-      '16 Mar, 2019',
-      'En cours',
-    ),
-    createData(
-      3,
-      4,
-      'Construction',
-      'Villa',
-      'Arrondissement El Fida',
-      '16 Mar, 2019',
-      'En cours',
-    ),
-    createData(
-      4,
-      5,
-      'Construction',
-      'Villa',
-      'Arrondissement El Fida',
-      '16 Mar, 2019',
-      'En cours',
-    ),
-    createData(
-        5,
-        6,
-        'Construction',
-        'Villa',
-        'Arrondissement El Fida',
-        '16 Mar, 2019',
-        'En cours',
-      ),
-      createData(
-        6,
-        7,
-        'Construction',
-        'Villa',
-        'Arrondissement El Fida',
-        '16 Mar, 2019',
-        'En cours',
-      ),
-      createData(
-        7,
-        8,
-        'Construction',
-        'Villa',
-        'Arrondissement El Fida',
-        '16 Mar, 2019',
-        'En cours',
-      ),
-      createData(
-        8,
-        9,
-        'Construction',
-        'Villa',
-        'Arrondissement El Fida',
-        '16 Mar, 2019',
-        'En cours',
-      ),
-      createData(
-        9,
-        10,
-        'Construction',
-        'Villa',
-        'Arrondissement El Fida',
-        '16 Mar, 2019',
-        'En cours',
-      ),
-      createData(
-        10,
-        11,
-        'Construction',
-        'Villa',
-        'Arrondissement El Fida',
-        '16 Mar, 2019',
-        'En cours',
-      ),
-      createData(
-        11,
-        12,
-        'Construction',
-        'Villa',
-        'Arrondissement El Fida',
-        '16 Mar, 2019',
-        'En cours',
-      ),
-      createData(
-        12,
-        13,
-        'Construction',
-        'Villa',
-        'Arrondissement El Fida',
-        '16 Mar, 2019',
-        'En cours',
-      ),
-  ];
+
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -195,7 +77,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function DemandesAcceptees() {
@@ -211,7 +92,7 @@ export default function DemandesAcceptees() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px',
             }}
           >
             <IconButton
@@ -281,7 +162,6 @@ export default function DemandesAcceptees() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
 
-              {/* Mes demandes */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', overflowX: 'auto' }}>
                   <Orders title="Mes demandes acceptées" rows={rows} paginationEnabled />

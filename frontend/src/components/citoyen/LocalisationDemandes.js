@@ -121,14 +121,12 @@ export default function LocalisationDemandes() {
 
   
   if (user  === null) {
-    // Render "Page Not Authorized" content
     return (
       <div style={{ textAlign: 'center', marginTop: '100px', color: 'red' }}>
   <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>Page Not Authorized</h1>
   <p style={{ fontSize: '1.5rem' }}>
     You don't have the necessary permissions to access this page.
   </p>
-  {/* You can include additional content or redirect to another page */}
 </div>
 
     );
@@ -143,7 +141,7 @@ export default function LocalisationDemandes() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px', 
             }}
           >
             <IconButton
@@ -168,7 +166,6 @@ export default function LocalisationDemandes() {
               Localisation de mes demandes
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-    {/* AccountCircleIcon and Typography wrapped in a div or Box */}
     <Box sx={{ display: 'flex', alignItems: 'center', marginRight: '8px' }}>
       <AccountCircleIcon sx={{ fontSize: 40 }} />
       <Typography
@@ -182,7 +179,6 @@ export default function LocalisationDemandes() {
       </Typography>
     </Box>
     
-    {/* IconButton for Logout */}
     <IconButton component={RouterLink} to="/" title="Se déconnecter" color="inherit">
       <LogoutIcon sx={{ fontSize: 30 }} />
     </IconButton>
@@ -206,12 +202,7 @@ export default function LocalisationDemandes() {
           </Toolbar>
           <Divider />
           <List component="nav">
-          {/* <ListItemButton onClick={() => handleNavigation('/citoyen')}>
-        <ListItemIcon>
-          <HomeIcon sx={{ fontSize: 23, color: 'primary.main' }} />
-        </ListItemIcon>
-        <ListItemText primaryTypographyProps={{ fontSize: '14px' }} primary="Accueil" />
-      </ListItemButton> */}
+      
 
       <ListItemButton onClick={() => handleNavigation('/citoyen/mes-demandes')}>
         <ListItemIcon>
@@ -244,7 +235,6 @@ export default function LocalisationDemandes() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
 
-              {/* Mes demandes */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <MapCitoyen />

@@ -31,7 +31,7 @@ import { useNavigate } from 'react-router-dom';
 
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
-import { useLocation } from 'react-router-dom';  // Add this line
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -103,7 +103,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 
@@ -114,33 +113,13 @@ export default function EspaceCitoyen() {
   const { state: { user } } = useLocation();
 
   const handleNavigation = (pathname) => {
-    // Your logic here, you can perform additional actions before navigating
-    // For example, you can fetch data, validate something, etc.
 
-    // Then navigate to the specified path
     navigate(pathname, { state: { user: user } });
   };
 
 console.log(user);
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   findUserbyId(userId).then((res) => {
-  //     const dataUser = res.map((data) => {
-  //       return createData(
-  //         data.id,
-  //         data.id,
-  //         data.nom,
-  //         data.prenom,
-  //         data.email,
-  //         data.cin
-  //       );
-  //     });
-  
-  //     setUser(formattedRows);
-  //     setLoading(false);
-  //   });
-  // }, []);
+
 
   console.log(user.nom);
 
@@ -158,7 +137,7 @@ let username = user.nom +" " + user.prenom;
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px',
             }}
           >
             <IconButton
@@ -254,20 +233,18 @@ let username = user.nom +" " + user.prenom;
     fontFamily: 'Arial, sans-serif',
     fontSize: '3rem',
     textAlign: 'center',
-    paddingTop: '50px', // Ajustez la valeur en fonction de vos préférences
-    paddingBottom: '50px', // Ajustez la valeur en fonction de vos préférences
-    backgroundColor: '#ffffff', // Fond blanc
-    border: '2px solid #2196F3', // Bordure bleue
-    borderRadius: '10px', // Bordure arrondie
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', // Ombre légère
+    paddingTop: '50px',
+    paddingBottom: '50px', 
+    backgroundColor: '#ffffff',
+    border: '2px solid #2196F3',
+    borderRadius: '10px',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
   }}
 >
   Bienvenue, {username} ! Voici vos fonctionnalités :
 </Typography>
 
-            {/* Section des fonctionnalités */}
             <Grid container spacing={3}>
-  {/* Suivre l'état des demandes */}
   <Grid item xs={12} md={6}>
     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center' }}>
       <Typography variant="h6" gutterBottom style={{ fontSize: '1.8rem', textAlign: 'center' }}>
@@ -291,7 +268,6 @@ let username = user.nom +" " + user.prenom;
     </Paper>
   </Grid>
 
-  {/* Localiser les demandes sur la carte */}
   <Grid item xs={12} md={6}>
     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center' }}>
       <Typography variant="h6" gutterBottom style={{ fontSize: '1.8rem' }}>

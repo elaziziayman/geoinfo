@@ -6,10 +6,10 @@ function TitleChart(props) {
   return (
     <Typography
       component="h2"
-      variant="h4"  // Adjust the variant to your desired heading size
+      variant="h4"  
       color="primary"
-      align="center"  // Center the text
-      sx={{ marginTop: '10px' }}  // Add top margin for spacing
+      align="center" 
+      sx={{ marginTop: '10px' }} 
       gutterBottom
     >
       {props.children}

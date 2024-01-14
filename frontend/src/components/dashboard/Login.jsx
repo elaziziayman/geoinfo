@@ -99,11 +99,9 @@ export default function SignInSide() {
       
           } else {
             console.error('Error while login');
-            // Effectuez les actions nécessaires en cas d'erreur
           }
         } catch (error) {
           console.error('Erreur lors de la communication avec le serveur.', error);
-          // Effectuez les actions nécessaires en cas d'erreur de communication avec le serveur
         }finally {
           setLoading(false);
         }
@@ -219,7 +217,6 @@ export default function SignInSide() {
 
                 {loading && (
               <Box sx={{ textAlign: 'center', mt: 2 }}>
-                {/* Add a loading spinner or message as needed */}
                 <CircularProgress />
               </Box>
             )}

@@ -36,7 +36,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 
-import { useLocation } from 'react-router-dom';  // Add this line
+import { useLocation } from 'react-router-dom'; 
 import { useNavigate } from 'react-router-dom';
 
 
@@ -97,7 +97,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function DemandesEnInstanceAdmin() {
@@ -110,10 +109,7 @@ export default function DemandesEnInstanceAdmin() {
 
   const { state } = useLocation();
   const handleNavigation = (pathname) => {
-    // Your logic here, you can perform additional actions before navigating
-    // For example, you can fetch data, validate something, etc.
 
-    // Then navigate to the specified path
     navigate(pathname, { state: { user: user } });
   };
 
@@ -167,14 +163,12 @@ export default function DemandesEnInstanceAdmin() {
 
   
   if (user  === null) {
-    // Render "Page Not Authorized" content
     return (
       <div style={{ textAlign: 'center', marginTop: '100px', color: 'red' }}>
   <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>Page Not Authorized</h1>
   <p style={{ fontSize: '1.5rem' }}>
     You don't have the necessary permissions to access this page.
   </p>
-  {/* You can include additional content or redirect to another page */}
 </div>
 
     );
@@ -187,7 +181,7 @@ export default function DemandesEnInstanceAdmin() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px', 
             }}
           >
             <IconButton
@@ -223,9 +217,7 @@ export default function DemandesEnInstanceAdmin() {
   >
     <MenuIcon />
   </IconButton>
-  {/* Use the AccountCircleIcon instead of img */}
   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-    {/* AccountCircleIcon and Typography wrapped in a div or Box */}
     <Box sx={{ display: 'flex', alignItems: 'center', marginRight: '8px' }}>
       <AccountCircleIcon sx={{ fontSize: 40 }} />
       <Typography
@@ -239,7 +231,6 @@ export default function DemandesEnInstanceAdmin() {
       </Typography>
     </Box>
     
-    {/* IconButton for Logout */}
     <IconButton component={RouterLink} to="/" title="Se déconnecter" color="inherit">
       <LogoutIcon sx={{ fontSize: 30 }} />
     </IconButton>
@@ -323,7 +314,6 @@ export default function DemandesEnInstanceAdmin() {
           <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
 
-              {/* Mes demandes */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', overflowX: 'auto' }}>
                   <OrdersAdmin title="Les dossiers en instance" rows={rows} paginationEnabled showStatus={false} loading={loading} showActions={true} />

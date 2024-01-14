@@ -6,10 +6,10 @@ function Title(props) {
   return (
     <Typography
       component="h2"
-      variant="h5"  // Adjust the variant to your desired heading size
+      variant="h5" 
       color="primary"
-      align="center"  // Center the text
-      sx={{ marginTop: '10px' }}  // Add top margin for spacing
+      align="center"  
+      sx={{ marginTop: '10px' }} 
       gutterBottom
     >
       {props.children}

@@ -52,7 +52,7 @@ import MapIcon from '@mui/icons-material/Map';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
 
-import { useLocation } from 'react-router-dom';  // Add this line
+import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -82,7 +82,6 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 const handleButtonClick = () => {
-  // Your button click logic here
   console.log('Button Clicked!');
 };
 
@@ -140,10 +139,7 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
 
   const { state } = useLocation();
   const handleNavigation = (pathname) => {
-    // Your logic here, you can perform additional actions before navigating
-    // For example, you can fetch data, validate something, etc.
 
-    // Then navigate to the specified path
     navigate(pathname, { state: { user: user } });
   };
 
@@ -152,7 +148,6 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
   let username = user.nom +" " + user.prenom;
 
   const handleCloseDialog = () => {
-    // Close the dialog
     setOpenDialog(false);
   };
 
@@ -195,9 +190,7 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // Check if password and confirmationPassword match
     if (formData.password !== confirmationPassword) {
-      // Handle password mismatch (you can display an error message or take appropriate action)
       setPasswordError('Le mot de passe et sa confirmation ne correspondent pas');
 
       return;
@@ -206,7 +199,6 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
 
     setPasswordError('');
 
-    // Add your logic to handle form submission (e.g., API call or local state update)
     console.log('Form submitted with data:', formData);
 
     if(formData !=null){
@@ -228,18 +220,15 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
         
             } else {
               console.error('Erreur lors de la création de l\'admin.');
-              // Effectuez les actions nécessaires en cas d'erreur
             }
           } catch (error) {
             console.error('Erreur lors de la communication avec le serveur.', error);
-            // Effectuez les actions nécessaires en cas d'erreur de communication avec le serveur
           }finally {
             setLoading(false);
             setOpenDialog(true);
           }
     }
 
-    // Clear the form fields after submission
     setFormData({
       nom: '',
       prenom: '',
@@ -248,7 +237,6 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
       password: '',
     });
 
-    // Clear the confirmation password field
     setConfirmationPassword('');
   };
 
@@ -260,7 +248,7 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px', 
             }}
           >
             <IconButton
@@ -285,7 +273,6 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
               Création compte Admin
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-    {/* AccountCircleIcon and Typography wrapped in a div or Box */}
     <Box sx={{ display: 'flex', alignItems: 'center', marginRight: '8px' }}>
       <AccountCircleIcon sx={{ fontSize: 40 }} />
       <Typography
@@ -299,7 +286,6 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
       </Typography>
     </Box>
     
-    {/* IconButton for Logout */}
     <IconButton component={RouterLink} to="/" title="Se déconnecter" color="inherit">
       <LogoutIcon sx={{ fontSize: 30 }} />
     </IconButton>
@@ -497,7 +483,6 @@ const [showConfirmationPassword, setShowConfirmationPassword] = useState(false);
 
                       {loading && (
               <Box sx={{ textAlign: 'center', mt: 2 }}>
-                {/* Add a loading spinner or message as needed */}
                 <CircularProgress />
               </Box>
             )}

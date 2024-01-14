@@ -48,7 +48,6 @@ export default function SignInSide() {
   });
 
   const formatData = () => {
-    // Formattez les données dans le format JSON requis
     return {
       nom: document.getElementById('lastName').value,
       prenom: document.getElementById('firstName').value,
@@ -84,7 +83,6 @@ export default function SignInSide() {
     }));
   };
    const handleCloseDialog = () => {
-    // Close the dialog
     setOpenDialog(false);
   };
 
@@ -116,7 +114,6 @@ export default function SignInSide() {
 
 if(dataUser!=null){
   setLoading(true);
-   // Envoyez les données au backend
    try {
     const response = await fetch('http://localhost:8085/utilisateurs', {
       method: 'POST',
@@ -133,11 +130,9 @@ if(dataUser!=null){
 
     } else {
       console.error('Erreur lors de la création de l\'utilisateur.');
-      // Effectuez les actions nécessaires en cas d'erreur
     }
   } catch (error) {
     console.error('Erreur lors de la communication avec le serveur.', error);
-    // Effectuez les actions nécessaires en cas d'erreur de communication avec le serveur
   }finally {
     setLoading(false);
     setOpenDialog(true);
@@ -368,7 +363,6 @@ if(dataUser!=null){
                 </Button>
                 {loading && (
               <Box sx={{ textAlign: 'center', mt: 2 }}>
-                {/* Add a loading spinner or message as needed */}
                 <CircularProgress />
               </Box>
             )}

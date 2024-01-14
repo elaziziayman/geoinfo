@@ -35,7 +35,7 @@ const MapAdmin = () => {
     button.style.marginTop = '8px';
     button.style.padding = '4px 8px';
     button.style.cursor = 'pointer';
-    button.style.backgroundColor = color; // Set the background color here
+    button.style.backgroundColor = color;
   
     button.disabled = base64String === null;
   

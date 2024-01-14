@@ -19,12 +19,10 @@ function createExportData(Nom_Arrondissment, Nombre_de_demandes) {
   return {Nom_Arrondissment, Nombre_de_demandes};
 }
 
-// Generate Order Data
 function createBarChartLabels(nom_commune) {
   return nom_commune;
 }
 
-// Generate Order Data
 function createBarChartValues(num_demandes) {
   return num_demandes;
 }

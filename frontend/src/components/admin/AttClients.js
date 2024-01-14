@@ -11,10 +11,10 @@ import TitleChart from '../dashboard/TitleChart';
 import { styled, alpha } from '@mui/material/styles';
 import { CircularProgress } from '@mui/material';
 import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';  // Add this import
-import DialogTitle from '@mui/material/DialogTitle';  // Add this import
-import DialogContent from '@mui/material/DialogContent';  // Add this import
-import TextField from '@mui/material/TextField';  // Add this import
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import TextField from '@mui/material/TextField';
 import DialogActions from '@mui/material/DialogActions';
 import {Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -40,9 +40,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: alpha(theme.palette.primary.light, 0.1), // Adjust the alpha value as needed
+    backgroundColor: alpha(theme.palette.primary.light, 0.1),
   },
-  // hide last border
   '&:last-child td, &:last-child th': {
     border: 0,
   },
@@ -103,7 +102,6 @@ const filteredRows = rows.filter((row) => {
 
 
   useEffect(() => {
-    // Update rows data when the prop 'rows' changes
     setRowData(rows);
   }, [rows]);
 
@@ -120,12 +118,12 @@ const filteredRows = rows.filter((row) => {
 
   const buttonStyle = {
     width: '70px',
-    height: '60px', // Set height equal to width to make the button circular
+    height: '60px', 
     margin: '0 8px',
     fontSize: '10px',
     fontWeight: 'bold',
     fontFamily: 'YourFont, sans-serif',
-    borderRadius: '50%', // Make the button circular
+    borderRadius: '50%', 
   };
 
   const handleOpenReasonDialogDisable = (id) => {
@@ -139,7 +137,6 @@ const filteredRows = rows.filter((row) => {
   };
 
   const handleDisable = () => {
-    // Placeholder function for handling rejection
 
  console.log(`Disable reason for row with ID ${selectedRowId}: ${disableReason}`);
  handleCloseReasonDialogDisable();
@@ -158,7 +155,6 @@ const filteredRows = rows.filter((row) => {
         );
  })
  .catch(error => {
-   // Gérer les erreurs
    console.error('Update error:', error);
  });
 
@@ -166,7 +162,6 @@ const filteredRows = rows.filter((row) => {
  }
 
  const handleEnable = (id) => {
-  // Placeholder function for handling rejection
   setSelectedRowId(id);
 
 console.log('rowid : ' + id)
@@ -182,7 +177,6 @@ axios.post('http://localhost:8085/utilisateurs/updateStatut', {
 );
 })
 .catch(error => {
- // Gérer les erreurs
  console.error('Update error:', error);
 });
 
@@ -199,7 +193,6 @@ axios.post('http://localhost:8085/utilisateurs/updateStatut', {
         <FormControl fullWidth style={{ marginLeft: '20px', width: '225px' }}>
   <InputLabel id="nom-complet-filter-label" style={{
       visibility: nomCompletFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }} >Filtrer par Nom complet</InputLabel>
   <Autocomplete
     id="nom-complet-filter"
@@ -216,7 +209,6 @@ axios.post('http://localhost:8085/utilisateurs/updateStatut', {
 <FormControl fullWidth style={{ marginLeft: '20px', width: '225px' }}>
   <InputLabel id="cin-filter-label" style={{
       visibility: cinFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }}>Filtrer par CIN</InputLabel>
   <Autocomplete
     id="cin-filter"
@@ -233,7 +225,6 @@ axios.post('http://localhost:8085/utilisateurs/updateStatut', {
 <FormControl fullWidth style={{ marginLeft: '20px', width: '225px' }}>
   <InputLabel id="email-filter-label" style={{
       visibility: emailFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }}>Filtrer par Email</InputLabel>
   <Autocomplete
     id="email-filter"
@@ -250,7 +241,6 @@ axios.post('http://localhost:8085/utilisateurs/updateStatut', {
 <FormControl fullWidth style={{ marginLeft: '20px', width: '225px' }}>
   <InputLabel id="statut-filter-label" style={{
       visibility: statutFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }}>Filtrer par Statut</InputLabel>
   <Autocomplete
     id="statut-filter"

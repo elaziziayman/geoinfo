@@ -43,7 +43,6 @@ import { Navigation } from '../navigation';
 
 
 
-// Generate Order Data
 function createData(id, num, demandeur, cin ,autorisation, occupation, commune, date,statut) {
   return {id, num, demandeur,cin, autorisation, occupation, commune, date,statut};
 }
@@ -111,7 +110,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 
@@ -293,7 +291,6 @@ const formatDate = (timestamp) => {
           <Toolbar />
           <Container maxWidth="lg" sx={{  mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-            {/* Recent Deposits */}
 
             <Grid item xs={10} md={2} lg={2}>
                 <Paper
@@ -303,8 +300,8 @@ const formatDate = (timestamp) => {
                     flexDirection: 'column',
                   
                     height: 100,
-                    alignItems: 'center',      // Center content vertically
-                    justifyContent: 'center',  // Center content horizontally
+                    alignItems: 'center',     
+                    justifyContent: 'center',  
                   }}
                 >
                   <Deposits title="Total des demandes" number={totalDemandes} icon={<AssignmentIcon sx={{ color: 'primary.main' }} />}/>
@@ -318,8 +315,8 @@ const formatDate = (timestamp) => {
                     flexDirection: 'column',
       
                     height: 100,
-                    alignItems: 'center',      // Center content vertically
-                    justifyContent: 'center',  // Center content horizontally
+                    alignItems: 'center',      
+                    justifyContent: 'center',  
                   }}
                 >
                   <Deposits title="Demandes favorables" number={totalDemandesFavorables} icon={<TaskIcon sx={{ color: 'primary.main' }} />}  />
@@ -333,8 +330,8 @@ const formatDate = (timestamp) => {
                     flexDirection: 'column',
               
                     height: 100,
-                    alignItems: 'center',      // Center content vertically
-                    justifyContent: 'center',  // Center content horizontally
+                    alignItems: 'center',     
+                    justifyContent: 'center',  
                   }}
                 >
                   <Deposits title="Demandes défavorables" number={totalDemandesDefavorables} icon={<UnpublishedIcon sx={{ color: 'primary.main' }} />}/>
@@ -348,8 +345,8 @@ const formatDate = (timestamp) => {
                     display: 'flex',
                     flexDirection: 'column',
                     height: 100,
-                    alignItems: 'center',      // Center content vertically
-                    justifyContent: 'center',  // Center content horizontally
+                    alignItems: 'center',     
+                    justifyContent: 'center', 
                   }}
                 >
                   <Deposits title="En Cours de traitement" number={totalDemandes-totalDemandesDefavorables-totalDemandesFavorables-totalDemandesEnInstance- totalDemandesRejetees} icon={<PendingActionsIcon sx={{ color: 'primary.main' }} />}/>
@@ -364,8 +361,8 @@ const formatDate = (timestamp) => {
                     display: 'flex',
                     flexDirection: 'column',
                     height: 100,
-                    alignItems: 'center',      // Center content vertically
-                    justifyContent: 'center',  // Center content horizontally
+                    alignItems: 'center',      
+                    justifyContent: 'center',  
                   }}
                 >
                   <Deposits title="Dossiers rejetées" number={totalDemandesRejetees} icon={< DifferenceIcon sx={{ color: 'primary.main' }} />}/>
@@ -380,8 +377,8 @@ const formatDate = (timestamp) => {
                     display: 'flex',
                     flexDirection: 'column',
                     height: 100,
-                    alignItems: 'center',      // Center content vertically
-                    justifyContent: 'center',  // Center content horizontally
+                    alignItems: 'center',      
+                    justifyContent: 'center', 
                   }}
                 >
                   <Deposits title="En instance" number={totalDemandesEnInstance} icon={< DifferenceIcon sx={{ color: 'primary.main' }} />}/>
@@ -396,11 +393,10 @@ const formatDate = (timestamp) => {
                     display: 'flex',
                     flexDirection: 'column',
                     height: 240,
-                    alignItems: 'center',      // Center content vertically
+                    alignItems: 'center',    
                     justifyContent: 'center', 
                   }}
                 >
-                   {/* <Chart /> */}
                    <MyPieChart data = {dataAutorisation} title = "Demandes par autorisation" />
                   
                 </Paper>
@@ -413,16 +409,14 @@ const formatDate = (timestamp) => {
                     display: 'flex',
                     flexDirection: 'column',
                     height: 240,
-                    alignItems: 'center',      // Center content vertically
+                    alignItems: 'center',      
                     justifyContent: 'center', 
                   }}
                 >
-                   {/* <Chart /> */}
                    <MyPieChart data = {dataOccupation} title = "Demandes par occupation de terrain" />
                   
                 </Paper>
               </Grid>
-              {/* Recent Orders */}
               <Grid item xs={12}>
   <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

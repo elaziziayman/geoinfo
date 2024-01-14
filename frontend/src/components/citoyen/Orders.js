@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 
 
-import TextField from '@mui/material/TextField';  // Add this import
+import TextField from '@mui/material/TextField'; 
 import DialogActions from '@mui/material/DialogActions';
 import {Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -39,9 +39,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: alpha(theme.palette.primary.light, 0.1), // Adjust the alpha value as needed
+    backgroundColor: alpha(theme.palette.primary.light, 0.1),
   },
-  // hide last border
   '&:last-child td, &:last-child th': {
     border: 0,
   },
@@ -82,12 +81,12 @@ export default function Orders({title, rows, paginationEnabled, showStatus, show
 
   const buttonStyle = {
     width: '50px',
-    height: '50px', // Set height equal to width to make the button circular
+    height: '50px',
     margin: '0 8px',
     fontSize: '10px',
     fontWeight: 'bold',
     fontFamily: 'YourFont, sans-serif',
-    borderRadius: '50%', // Make the button circular
+    borderRadius: '50%',
   };
 
   const showPdf = (base64String) => {
@@ -160,14 +159,13 @@ export default function Orders({title, rows, paginationEnabled, showStatus, show
           <FormControl fullWidth style={{ marginBottom: '10px', width: '225px' }}>
               <InputLabel id="autorisation-filter-label" style={{
       visibility: autorisationFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }}>Filtrer par autorisation</InputLabel>
                <Autocomplete
   id="autorisation-filter"
   options={getUniqueValues(rows, 'autorisation')}
   value={autorisationFilter || ''}
   onChange={(event, newValue) => {
-    const selectedValue = newValue || '';  // Set to an empty string if null
+    const selectedValue = newValue || ''; 
     handleFilterChange({ target: { value: selectedValue } }, setAutorisationFilter);
   }}
   renderInput={(params) => <TextField {...params} InputProps={{ ...params.InputProps }} />}
@@ -186,7 +184,7 @@ export default function Orders({title, rows, paginationEnabled, showStatus, show
   options={getUniqueValues(rows, 'commune')}
   value={arrondissementFilter || ''}
   onChange={(event, newValue) => {
-    const selectedValue = newValue || '';  // Set to an empty string if null
+    const selectedValue = newValue || '';  
     handleFilterChange({ target: { value: selectedValue } }, setArrondissementFilter);
   }}
   renderInput={(params) => <TextField {...params} InputProps={{ ...params.InputProps }} />}
@@ -199,14 +197,13 @@ export default function Orders({title, rows, paginationEnabled, showStatus, show
                <FormControl fullWidth style={{ marginBottom: '10px', width: '180px' }}>
                  <InputLabel id="statut-filter-label" style={{
       visibility: statutFilter ? 'hidden' : 'visible',
-      // Add other styling as needed
     }}>Filtrer par statut</InputLabel>
     <Autocomplete
   id="statut-filter"
   options={getUniqueValues(rows, 'statut')}
   value={statutFilter || ''}
   onChange={(event, newValue) => {
-    const selectedValue = newValue || '';  // Set to an empty string if null
+    const selectedValue = newValue || ''; 
     handleFilterChange({ target: { value: selectedValue } }, setStatutFilter);
   }}
   renderInput={(params) => <TextField {...params} InputProps={{ ...params.InputProps }} />}

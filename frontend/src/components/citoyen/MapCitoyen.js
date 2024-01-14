@@ -5,7 +5,8 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import L from 'leaflet';
-import { useLocation } from 'react-router-dom';  // Add this line
+import { useLocation } from 'react-router-dom';  
+
 
 import 'leaflet.markercluster';
 
@@ -60,7 +61,7 @@ const MapCitoyen = () => {
     button.style.marginTop = '8px';
     button.style.padding = '4px 8px';
     button.style.cursor = 'pointer';
-    button.style.backgroundColor = color; // Set the background color here
+    button.style.backgroundColor = color;
   
     button.disabled = base64String === null;
   
@@ -148,16 +149,7 @@ const MapCitoyen = () => {
 
   return (
     <MapContainer center={position} zoom={10} style={{ height: '700px', width: '100%', zIndex: 0 }} ref={mapRef_citoyen}>
-      {/* <LayersControl position="topright">
-        {['Acceptée', 'Favorable', 'Défavorable', 'Rejetée'].map((type) => (
-          <LayersControl.Overlay
-            key={type}
-            name={`Demande - ${type}`}
-            checked={selectedLayer.includes(type)}
-            onChange={() => setSelectedLayer((prev) => [...prev])}
-          />
-        ))}
-      </LayersControl> */}
+    
 
 <LayersControl position="topright">
         <BaseLayer  name="Esri World Street Map">

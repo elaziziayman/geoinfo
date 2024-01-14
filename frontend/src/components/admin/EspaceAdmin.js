@@ -82,7 +82,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 
@@ -98,44 +97,10 @@ export default function EspaceAdmin() {
 
 
 
-let username = "El Azizi Ayman";
+let username = "";
 
 
 
-
-// useEffect(() => {
-
-//   setLoading(true);
-//   getDemandes().then((res) => {
-//     const formattedRows = res.map((data) => {
-//         username = data.demandeur.nom + " " + data.demandeur.prenom;
-//       return createData(
-//         data.num_demande,
-//         data.num_demande,
-//         username,
-//         data.demandeur.cin,
-//         data.autorisation.type,
-//         data.occupation.type,
-//         data.commune.nom,
-//         formatDate(data.date),
-//         data.statut.type
-//       );
-//     });
-
-//     setRows(formattedRows.slice(0, 5));
-
-//     setLoading(false);
-//   });
-
-
- 
-  
-
-
-
-
-
-// }, []);
 
 
 
@@ -153,7 +118,7 @@ let username = "El Azizi Ayman";
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px', 
             }}
           >
             <IconButton
@@ -229,20 +194,18 @@ let username = "El Azizi Ayman";
     fontFamily: 'Arial, sans-serif',
     fontSize: '3rem',
     textAlign: 'center',
-    paddingTop: '50px', // Ajustez la valeur en fonction de vos préférences
-    paddingBottom: '50px', // Ajustez la valeur en fonction de vos préférences
-    backgroundColor: '#ffffff', // Fond blanc
-    border: '2px solid #2196F3', // Bordure bleue
-    borderRadius: '10px', // Bordure arrondie
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', // Ombre légère
+    paddingTop: '50px',
+    paddingBottom: '50px',
+    backgroundColor: '#ffffff',
+    border: '2px solid #2196F3',
+    borderRadius: '10px', 
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', 
   }}
 >
   Bienvenue, {username} ! Découvrez vos fonctionnalités d'administration :
 </Typography>
 
-            {/* Section des fonctionnalités */}
             <Grid container spacing={3}>
-              {/* Accepter ou Refuser les Dossiers */}
               <Grid item xs={12} sm={6} md={4}>
               <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: '100%',  alignItems: 'center' }}>
               <Typography variant="h6" gutterBottom style={{ fontSize: '1.8rem', textAlign: 'center' }}>
@@ -264,11 +227,9 @@ let username = "El Azizi Ayman";
 
                     Examiner et prendre des décisions sur les dossiers en instance.
                   </Typography>
-                  {/* Ajoutez tout style ou icône supplémentaire selon les besoins */}
                 </Paper>
               </Grid>
 
-              {/* Avis Favorable ou Défavorable */}
               <Grid item xs={12} sm={6} md={4}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center' }}>
                   <Typography variant="h6" gutterBottom style={{ fontSize: '1.8rem', textAlign: 'center' }}>
@@ -289,7 +250,6 @@ let username = "El Azizi Ayman";
                   <Typography variant="body1" style={{ fontSize: '1.4rem', textAlign: 'center' }}>
                     Donnez votre avis sur les demandes.
                   </Typography>
-                  {/* Ajoutez tout style ou icône supplémentaire selon les besoins */}
                 </Paper>
               </Grid>
 
@@ -306,11 +266,9 @@ let username = "El Azizi Ayman";
                   <Typography variant="body1" style={{ fontSize: '1.4rem', textAlign: 'center' }}>
                     Visualisez la distribution géographique des demandes.
                   </Typography>
-                  {/* Ajoutez tout style ou icône supplémentaire selon les besoins */}
                 </Paper>
               </Grid>
 
-              {/* Activer ou Désactiver les Comptes des Citoyens */}
               <Grid item xs={12} sm={6} md={4}>
               <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center' }}>
               <Typography variant="h6" gutterBottom style={{ fontSize: '1.8rem' }}>
@@ -325,7 +283,6 @@ let username = "El Azizi Ayman";
                     <Typography variant="body1" style={{ fontSize: '1.4rem', textAlign: 'center' }}>
                     Gérez les comptes citoyens.
                   </Typography>
-                  {/* Ajoutez tout style ou icône supplémentaire selon les besoins */}
                 </Paper>
               </Grid>
             </Grid>
