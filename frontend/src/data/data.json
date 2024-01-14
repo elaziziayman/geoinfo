@@ -1,0 +1,134 @@
+{
+  "Header": {
+    "title": "Plateforme E-Demandes",
+    "paragraph": "Une plateforme « e-demandes » de dématérialisation et de suivi des demandes d’autorisations destinée au grand public."
+  },
+  "About": {
+    "paragraph": "La plateforme E-Demandes offre une dématérialisation des demandes d'autorisations avec un suivi en temps réel.",
+    "Why": [
+      "Suivi en temps réel des demandes.",
+      "Accès facile via l'application mobile et la plateforme Web."
+    ],
+    "Why2": [
+      "Dématérialisation pour une meilleure efficacité.",
+      "Transparence du processus."
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "Demande de construction",
+      "largeImage": "img/demandes/demande_construction.pdf",
+      "smallImage": "img/portfolio/construction.jpg"
+    },
+    {
+      "title": "Demande d'extension",
+      "largeImage": "img/demandes/demande_extension.pdf",
+      "smallImage": "img/portfolio/extension.jpg"
+    },
+    {
+      "title": "Demande de démolition",
+      "largeImage": "img/demandes/demande_demolition.pdf",
+      "smallImage": "img/portfolio/demolition.jpg"
+    }
+    
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-mobile",
+      "name": "Suivi Mobile",
+      "text": "Suivez l'état de votre demande où que vous soyez, avec des mises à jour en temps réel."
+    },
+    {
+      "icon": "fa fa-file-text-o",
+      "name": "Dépôt de demandes avec pièces jointes",
+      "text": "Déposez vos demandes avec des pièces jointes en toute simplicité."
+    },
+    {
+      "icon": "fa fa-book",
+      "name": "Procédures administratives",
+      "text": "Accédez aux documents (PDF) présentant la procédure administrative pour chaque type de demande."
+    }
+   
+  ],
+  "Features": [
+    {
+      "icon": "fa fa-home",
+      "title": "Construction",
+      "text": "Demande d'autorisation pour la construction de nouveaux bâtiments ou structures."
+    },
+    {
+      "icon": "fa fa-expand",
+      "title": "Extension",
+      "text": "Demande d'autorisation pour l'extension ou l'ajout de nouvelles sections à des structures existantes."
+    },
+    {
+      "icon": "fa fa-trash",
+      "title": "Démolition",
+      "text": "Demande d'autorisation pour la démolition de structures existantes."
+    }
+  ],
+
+
+
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/03.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/04.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/05.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/06.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "John Doe",
+      "job": "Director"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Mike Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Jane Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Karen Doe",
+      "job": "Project Manager"
+    }
+  ],
+  "Contact": {
+    "address": "Ecole Hassania des Travaux Publics, Km 7 Rte d'El Jadida, Casablanca ",
+    "phone": "+212 700 00 0000",
+    "email": "geoinfo@ehtp.ac.ma"
+    
+  }
+  
+}
